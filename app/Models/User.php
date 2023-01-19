@@ -46,10 +46,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Stat::class);
     }
-
-    public function isSubscribed($userId)
-    {
-        $user = auth()->user();
-
-    }
 }

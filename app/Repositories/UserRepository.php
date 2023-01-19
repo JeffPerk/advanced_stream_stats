@@ -9,6 +9,9 @@ class UserRepository
 {
     public function isSubscribed($userId)
     {
-        return User::where('id', '=', $userId)->findOrFail();
+        return (bool)User::where([
+            ['id', $userId],
+            ['is_subscribed', true]
+        ])->first();
     }
 }
